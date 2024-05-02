@@ -100,3 +100,43 @@ Internal Error
 [0m11:27:54.847601 [debug] [MainThread]: Command `dbt debug` failed at 11:27:54.847526 after 0.85 seconds
 [0m11:27:54.847826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103990b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1056631f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ddb4f0>]}
 [0m11:27:54.848047 [debug] [MainThread]: Flushing usage events
+[0m12:12:52.451251 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108398b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a25ac20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a25a740>]}
+
+
+============================== 12:12:52.453945 | c4738730-2fe2-45c2-be9f-85a01e7085e3 ==============================
+[0m12:12:52.453945 [info ] [MainThread]: Running with dbt=1.7.13
+[0m12:12:52.454272 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/nimaaref/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:12:52.454690 [info ] [MainThread]: dbt version: 1.7.13
+[0m12:12:52.454875 [info ] [MainThread]: python version: 3.10.10
+[0m12:12:52.455037 [info ] [MainThread]: python path: /Users/nimaaref/Desktop/GitHub Projects/thelook_ecommerce/venv/bin/python
+[0m12:12:52.455195 [info ] [MainThread]: os info: macOS-13.6-arm64-arm-64bit
+[0m12:12:53.341058 [info ] [MainThread]: Using profiles dir at /Users/nimaaref/.dbt
+[0m12:12:53.341372 [info ] [MainThread]: Using profiles.yml file at /Users/nimaaref/.dbt/profiles.yml
+[0m12:12:53.341753 [info ] [MainThread]: Using dbt_project.yml file at /Users/nimaaref/Desktop/GitHub Projects/thelook_ecommerce/dbt_project.yml
+[0m12:12:53.342002 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m12:12:53.344015 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.9464365, "process_user_time": 2.157777, "process_kernel_time": 2.116725, "process_mem_max_rss": "183255040", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:12:53.344432 [debug] [MainThread]: Command `dbt debug` failed at 12:12:53.344354 after 0.95 seconds
+[0m12:12:53.344656 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108398b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a1e3790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16a282e60>]}
+[0m12:12:53.344887 [debug] [MainThread]: Flushing usage events
+[0m12:13:33.692667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053a8b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108722c80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087227a0>]}
+
+
+============================== 12:13:33.695015 | a6358d76-167b-4c2e-a340-675adf3102dd ==============================
+[0m12:13:33.695015 [info ] [MainThread]: Running with dbt=1.7.13
+[0m12:13:33.695351 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/nimaaref/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:13:33.695749 [info ] [MainThread]: dbt version: 1.7.13
+[0m12:13:33.695936 [info ] [MainThread]: python version: 3.10.10
+[0m12:13:33.696104 [info ] [MainThread]: python path: /Users/nimaaref/Desktop/GitHub Projects/thelook_ecommerce/venv/bin/python
+[0m12:13:33.696265 [info ] [MainThread]: os info: macOS-13.6-arm64-arm-64bit
+[0m12:13:34.134539 [info ] [MainThread]: Using profiles dir at /Users/nimaaref/.dbt
+[0m12:13:34.134877 [info ] [MainThread]: Using profiles.yml file at /Users/nimaaref/.dbt/profiles.yml
+[0m12:13:34.135068 [info ] [MainThread]: Using dbt_project.yml file at /Users/nimaaref/Desktop/GitHub Projects/thelook_ecommerce/dbt_project.yml
+[0m12:13:34.135291 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m12:13:34.136444 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_wall_clock_time": 0.48171422, "process_user_time": 1.767434, "process_kernel_time": 1.933268, "process_mem_max_rss": "183009280", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:13:34.136789 [debug] [MainThread]: Command `dbt debug` failed at 12:13:34.136717 after 0.48 seconds
+[0m12:13:34.136997 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053a8b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b7102e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b710130>]}
+[0m12:13:34.137227 [debug] [MainThread]: Flushing usage events
