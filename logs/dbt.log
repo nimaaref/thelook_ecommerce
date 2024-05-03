@@ -140,3 +140,18 @@ Internal Error
 [0m12:13:34.136789 [debug] [MainThread]: Command `dbt debug` failed at 12:13:34.136717 after 0.48 seconds
 [0m12:13:34.136997 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1053a8b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b7102e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11b710130>]}
 [0m12:13:34.137227 [debug] [MainThread]: Flushing usage events
+[0m12:27:52.845283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c98b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a6ada0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a6a8c0>]}
+
+
+============================== 12:27:52.848350 | be13d902-ae99-4468-8951-0a057cc14c1b ==============================
+[0m12:27:52.848350 [info ] [MainThread]: Running with dbt=1.7.13
+[0m12:27:52.848697 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/nimaaref/.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --select stg_ecommerce__orders', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:27:52.849048 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/nimaaref/Desktop/GitHub Projects/thelook_ecommerce/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m12:27:52.850418 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.05087517, "process_user_time": 1.01065, "process_kernel_time": 0.11886, "process_mem_max_rss": "98189312", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:27:52.850829 [debug] [MainThread]: Command `dbt run` failed at 12:27:52.850747 after 0.05 seconds
+[0m12:27:52.851049 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106c98b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a6b340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108a6b280>]}
+[0m12:27:52.851264 [debug] [MainThread]: Flushing usage events
