@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: stg_ecommerce__order_items
+    description: "This staging model contains detailed information about individual items within customer orders in the ecommerce system."
+
+    columns:
+      - name: order_item_id
+        data_type: int64
+        description: "A unique identifier for each item in an order."
+        tests:
+          - unique
+          - not_null
+
+      - name: order_id
+        data_type: int64
+        description: "The ID of the order that this item belongs to."
+        tests:
+          - not_null
+
+      - name: user_id
+        data_type: int64
+        description: "The ID of the user who placed the order."
+
+      - name: product_id
+        data_type: int64
+        description: "The ID of the product that was ordered."
+
+      - name: inventory_item_id
+        data_type: int64
+        description: "The ID of the specific inventory item associated with this order item."
+
+      - name: status
+        data_type: string
+        description: "The current status of the order item, such as 'pending', 'shipped', 'delivered', or 'returned'."
+
+      - name: created_at
+        data_type: timestamp
+        description: "The timestamp when the order item was created."
+
+      - name: shipped_at
+        data_type: timestamp
+        description: "The timestamp when the order item was shipped."
+
+      - name: delivered_at
+        data_type: timestamp
+        description: "The timestamp when the order item was delivered."
+
+      - name: returned_at
+        data_type: timestamp
+        description: "The timestamp when the order item was returned."
+
+      - name: sale_price
+        data_type: float64
+        description: "The sale price of the order item."

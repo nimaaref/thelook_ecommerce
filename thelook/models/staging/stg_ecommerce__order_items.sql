@@ -16,3 +16,4 @@ SELECT
         delivered_at,
         returned_at,
         sale_price
+FROM source

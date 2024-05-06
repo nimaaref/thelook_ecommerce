@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: stg_ecommerce__events
+    description: "This staging model contains raw ecommerce event data, including details about user sessions and interactions on the website."
+
+    columns:
+      - name: event_id
+        data_type: int64
+        description: "A unique identifier for each event."
+        tests:
+          - unique
+          - not_null
+
+      - name: user_id
+        data_type: int64
+        description: "The ID of the user who triggered the event."
+        tests:
+          - not_null
+
+      - name: sequence_number
+        data_type: int64
+        description: "A sequential number indicating the order of events for a specific user."
+        tests:
+          - not_null
+
+      - name: session_id
+        data_type: string
+        description: "A unique identifier for the user's session during which the event occurred."
+        tests:
+          - not_null
+
+      - name: created_at
+        data_type: timestamp
+        description: "The timestamp when the event occurred."
+
+      - name: ip_address
+        data_type: string
+        description: "The IP address from which the event was triggered."
+
+      - name: city
+        data_type: string
+        description: "The city from which the event was triggered, based on the IP address."
+
+      - name: state
+        data_type: string
+        description: "The state or region from which the event was triggered, based on the IP address."
+
+      - name: postal_code
+        data_type: string
+        description: "The postal code from which the event was triggered, based on the IP address."
+
+      - name: browser
+        data_type: string
+        description: "The type of browser used by the user when the event was triggered."
+
+      - name: traffic_source
+        data_type: string
+        description: "The source of the traffic for the event. The accepted values are Adwords, Organic, Facebook, Email, YouTube"
+        tests:
+          - accepted_values:
+              name: unexpected_traffic_source
+              values:
+                - Adwords
+                - Organic
+                - Facebook
+                - Email
+                - YouTube
+
+      - name: uri
+        data_type: string
+        description: "The URI of the page where the event was triggered."
+
+      - name: event_type
+        data_type: string
+        description: "The type of event. The accepted values are cancel, cart, department, home, purhcase, product."
+        tests:
+          - accepted_values:
+              name: unexpected_event_type
+              values:
+                - cancel
+                - cart
+                - department
+                - home
+                - purchase
+                - product

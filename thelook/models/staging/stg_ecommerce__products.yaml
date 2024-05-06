@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: stg_ecommerce__products
+    description: "Table containing information about products in the ecommerce system."
+
+    columns:
+      - name: product_id
+        data_type: int64
+        description: "A unique identifier for each product."
+        tests:
+          - unique
+          - not_null
+
+      - name: cost
+        data_type: float64
+        description: "The cost of the product to the company."
+
+      - name: category
+        data_type: string
+        description: "The category to which the product belongs, such as 'Electronics' or 'Clothing'."
+
+      - name: name
+        data_type: string
+        description: "The name of the product."
+
+      - name: brand
+        data_type: string
+        description: "The brand of the product."
+
+      - name: retail_price
+        data_type: float64
+        description: "The retail price of the product."
+
+      - name: department
+        data_type: string
+        description: "The department responsible for the product, such as 'Sales' or 'Marketing'."
+
+      - name: sku
+        data_type: string
+        description: "The stock keeping unit (SKU) of the product, used for inventory tracking."
+
+      - name: distribution_center_id
+        data_type: int64
+        description: "The ID of the distribution center where the product is stored."

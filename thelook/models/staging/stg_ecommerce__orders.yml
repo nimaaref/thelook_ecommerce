@@ -2,19 +2,20 @@ version: 2
 
 models:
   - name: stg_ecommerce__orders
-    description: "Table of 1 row per order"
+    description: "Table containing one row for each order placed by a user in the ecommerce system."
+
     columns:
       - name: order_id
-        description: ""
+        description: "A unique identifier for each order."
         tests:
           - not_null
           - unique
 
       - name: user_id
-        description: ""
+        description: "The ID of the user who placed the order."
 
       - name: status
-        description: ""
+        description: "The current status of the order, which can be 'Processing', 'Cancelled', 'Shipped', 'Complete', or 'Returned'."
         tests:
           - accepted_values:
               name: unexpected_order_status
@@ -26,16 +27,16 @@ models:
                 - Returned
 
       - name: created_at
-        description: ""
+        description: "The timestamp when the order was created."
 
       - name: returned_at
-        description: ""
+        description: "The timestamp when the order was returned, if applicable."
 
       - name: shipped_at
-        description: ""
+        description: "The timestamp when the order was shipped."
 
       - name: delivered_at
-        description: ""
+        description: "The timestamp when the order was delivered."
 
       - name: num_of_item
-        description: ""
+        description: "The number of items included in the order."
