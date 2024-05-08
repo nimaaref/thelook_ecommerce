@@ -17,14 +17,24 @@ models:
         description: "The ID of the order that this item belongs to."
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_ecommerce__orders')
+              field: order_id
 
       - name: user_id
         data_type: int64
         description: "The ID of the user who placed the order."
+        tests:
+          - not_null
 
       - name: product_id
         data_type: int64
         description: "The ID of the product that was ordered."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_ecommerce__products')
+              field: product_id
 
       - name: inventory_item_id
         data_type: int64

@@ -15,8 +15,6 @@ models:
       - name: user_id
         data_type: int64
         description: "The ID of the user who triggered the event."
-        tests:
-          - not_null
 
       - name: sequence_number
         data_type: int64

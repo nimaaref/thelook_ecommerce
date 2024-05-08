@@ -15,6 +15,8 @@ models:
       - name: cost
         data_type: float64
         description: "The cost of the product to the company."
+        test:
+          - not_null
 
       - name: category
         data_type: string

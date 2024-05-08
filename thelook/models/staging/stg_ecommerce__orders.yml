@@ -28,15 +28,28 @@ models:
 
       - name: created_at
         description: "The timestamp when the order was created."
+        tests:
+          - not_null
 
       - name: returned_at
         description: "The timestamp when the order was returned, if applicable."
+        tests:
+          - not_null:
+              where: "status = 'Returned'"
 
       - name: shipped_at
         description: "The timestamp when the order was shipped."
+        tests:
+          - not_null:
+              where: "delivered_at IS NOT NULL OR status = 'Shipped'"
 
       - name: delivered_at
         description: "The timestamp when the order was delivered."
+        tests:
+          - not_null:
+              where: "returned_at IS NOT NULL OR status = 'Complete'"
 
       - name: num_of_item
         description: "The number of items included in the order."
+        tests:
+          - not_null
