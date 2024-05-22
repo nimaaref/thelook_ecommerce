@@ -18,6 +18,7 @@ SELECT
         country,
         latitude,
         longitude,
+		st_geogpoint(longitude, latitude) as user_geolocation,
         traffic_source,
         created_at
 

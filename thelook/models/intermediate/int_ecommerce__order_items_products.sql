@@ -18,6 +18,8 @@ WITH orders as (
 		oi.user_id,
 		oi.order_id,
 		oi.product_id,
+		oi.inventory_item_id,
+		oi.status,
 
 	--Calculated Fields
 		ROUND(SUM(oi.sale_price),2) AS sale_price,
@@ -30,5 +32,7 @@ WITH orders as (
 		order_creation_date,
 		oi.user_id,
 		oi.order_id,
-		oi.product_id
+		oi.product_id,
+		oi.inventory_item_id,
+		oi.status
 

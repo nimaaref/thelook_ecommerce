@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_ecommerce__distribution_centers
+    description: "This model holds data about the distribution centers used by the ecommerce platform, including their geographic coordinates."
+    columns:
+      - name: distribution_center_id
+        data_type: int64
+        description: "A unique identifier for each distribution center."
+
+      - name: name
+        data_type: string
+        description: "The name of the distribution center."
+
+      - name: latitude
+        data_type: float64
+        description: "The latitude coordinate of the distribution center, used for mapping and logistic planning."
+
+      - name: longitude
+        data_type: float64
+        description: "The longitude coordinate of the distribution center, used for mapping and logistic planning."

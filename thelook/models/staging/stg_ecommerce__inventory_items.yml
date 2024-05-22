@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: stg_ecommerce__inventory_items
+    description: "This model provides detailed information on each inventory item, including product details and inventory management timestamps."
+    columns:
+      - name: inventory_item_id
+        data_type: int64
+        description: "A unique identifier for each inventory item."
+
+      - name: product_id
+        data_type: int64
+        description: "The unique identifier of the product associated with the inventory item."
+
+      - name: created_at
+        data_type: timestamp
+        description: "The timestamp when the inventory item was created in the system."
+
+      - name: sold_at
+        data_type: timestamp
+        description: "The timestamp when the inventory item was sold."
+
+      - name: cost
+        data_type: float64
+        description: "The cost price of the inventory item to the company."
+
+      - name: product_category
+        data_type: string
+        description: "The category to which the product belongs, such as 'Electronics' or 'Apparel'."
+
+      - name: product_name
+        data_type: string
+        description: "The name of the product."
+
+      - name: product_brand
+        data_type: string
+        description: "The brand of the product."
+
+      - name: product_retail_price
+        data_type: float64
+        description: "The retail price of the product as sold to customers."
+
+      - name: product_department
+        data_type: string
+        description: "The department within the company that manages the product."
+
+      - name: product_sku
+        data_type: string
+        description: "The stock-keeping unit (SKU) of the product, used for tracking and inventory management."
+
+      - name: product_distribution_center_id
+        data_type: int64
+        description: "The identifier for the distribution center where the product is stored."

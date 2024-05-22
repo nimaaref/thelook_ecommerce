@@ -10,3 +10,4 @@ sources:
       - name: products
       - name: users
       - name: events
+      - name: distribution_centers
