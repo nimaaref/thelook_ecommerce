@@ -34,6 +34,7 @@ SELECT
         u.closest_dc_name as customer_closest_dc,
         oip.product_distribution_name as product_originating_dc,
 		CASE WHEN u.closest_dc_name <> oip.product_distribution_name then "Not Matching" else "Matching" end as dc_match,
+		u.customer_status,
 
         ---AGGREGATED METRICS
         ROUND(SUM(p.cost * oip.quantity),2) as cost,
@@ -62,4 +63,5 @@ GROUP BY
         u.country,
         u.state,
         oip.product_distribution_name,
-        u.closest_dc_name
+        u.closest_dc_name,
+		u.customer_status
