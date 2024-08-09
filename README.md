@@ -70,8 +70,9 @@ The project is structured according to dbt best practices:
 - **Modular Structure:** The project is organized in a way that makes it easy to extend and modify.
 - **Comprehensive Testing:** Includes tests for data integrity and quality to ensure reliable outputs.
 
-## Examples or Screenshots
-Coming Soon!
+## DAG
+![dbt-dag (2)](https://github.com/user-attachments/assets/729a2f50-f788-406a-8678-066660cf3266)
+
 
 ## License
 This project is licensed under the MIT License.
