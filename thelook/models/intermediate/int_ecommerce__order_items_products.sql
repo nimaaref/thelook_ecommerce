@@ -1,56 +1,49 @@
-WITH orders as (
-	SELECT
-		*
-	FROM  {{ref('stg_ecommerce__orders')}}
-)
-
-, order_items as (
-	SELECT
-		*
-	FROM  {{ref('stg_ecommerce__order_items')}}
-)
-, inventory_items as (
-	SELECT *
-
-	FROM {{ref('stg_ecommerce__inventory_items')}}
-)
-, dc as (
-	SELECT *
-
-	FROM {{ref('stg_ecommerce__distribution_centers')}}
-)
-	SELECT
+with orders
+as (
+	select *
+	from {{ref('stg_ecommerce__orders') }})
+, order_items
+as (
+	select *
+	from {{ref('stg_ecommerce__order_items') }})
+, inventory_items
+as (
+	select *
+	from {{ref('stg_ecommerce__inventory_items') }})
+, dc
+as (
+	select *
+	from {{ref('stg_ecommerce__distribution_centers') }}
+	)
+select
 	-- Date
-   		CAST(oi.created_at AS DATE) as order_creation_date,
-
+	CAST(oi.created_at as date) as order_creation_date
+	,
 	-- Ids
-		oi.user_id,
-		oi.order_id,
-		oi.product_id,
-		oi.inventory_item_id,
-		ii.product_distribution_center_id,
-		dc.name as product_distribution_name,
-		oi.status,
-
-
+	oi.user_id
+	, oi.order_id
+	, oi.product_id
+	, oi.inventory_item_id
+	, ii.product_distribution_center_id
+	, dc.name as product_distribution_name
+	, oi.status
+	,
 	--Calculated Fields
-		ROUND(SUM(oi.sale_price),2) AS sale_price,
-		ROUND(SUM(oi.sale_price * o.num_of_item),2) as revenue,
-		SUM(o.num_of_item) as quantity
-  	FROM order_items as oi
-  	INNER JOIN orders as o
-    	ON o.order_id = oi.order_id
-	INNER JOIN inventory_items as ii
-		ON ii.inventory_item_id = oi.inventory_item_id
-	INNER JOIN dc
-		ON dc.distribution_center_id = ii.product_distribution_center_id
-  	GROUP BY
-		order_creation_date,
-		oi.user_id,
-		oi.order_id,
-		oi.product_id,
-		oi.inventory_item_id,
-		ii.product_distribution_center_id,
-		oi.status,
-		dc.name
-
+	ROUND(SUM(oi.sale_price), 2) as sale_price
+	, ROUND(SUM(oi.sale_price * o.num_of_item), 2) as revenue
+	, SUM(o.num_of_item) as quantity
+from order_items as oi
+inner join orders as o
+	on o.order_id = oi.order_id
+inner join inventory_items as ii
+	on ii.inventory_item_id = oi.inventory_item_id
+inner join dc
+	on dc.distribution_center_id = ii.product_distribution_center_id
+group by order_creation_date
+	, oi.user_id
+	, oi.order_id
+	, oi.product_id
+	, oi.inventory_item_id
+	, ii.product_distribution_center_id
+	, oi.status
+	, dc.name

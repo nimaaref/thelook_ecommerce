@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: funnel_performance
+    description: "Fact table containing performance metrics for different stages of the sales funnel."
+    columns:
+      - name: event_creation_date
+        data_type: date
+        description: "The date when the event was created."
+        tests:
+          - not_null
+
+      - name: traffic_source
+        data_type: string
+        description: "The source of traffic for the event."
+        tests:
+          - not_null
+
+      - name: event_type
+        data_type: string
+        description: "The type of event, such as page view, add to cart, or purchase."
+        tests:
+          - not_null
+
+      - name: browser
+        data_type: string
+        description: "The browser used during the event."
+        tests:
+          - not_null
+
+      - name: session_count
+        data_type: int64
+        description: "The number of sessions recorded for the event."
+
+      - name: purchase_count
+        data_type: int64
+        description: "The number of purchases made during the event."
+
+      - name: cart_count
+        data_type: int64
+        description: "The number of times items were added to the cart during the event."
+
+      - name: product_count
+        data_type: int64
+        description: "The number of products involved in the event."

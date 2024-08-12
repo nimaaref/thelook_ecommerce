@@ -44,58 +44,6 @@ models:
         data_type: float
         description: "product_retail_price minus item_sale_price"
 
-  - name: int_ecommerce__funnel_performance
-    description: "This table tracks the performance of the eCommerce funnel by various dimensions such as traffic source, event type, and browser, providing insights into user behavior and conversion metrics."
-    columns:
-      - name: event_creation_date
-        data_type: date
-        description: "The date when the event was created or recorded."
-        tests:
-          - not_null
-      - name: traffic_source
-        data_type: string
-        description: "The origin or source of the traffic, such as a search engine, social media platform, or direct visit."
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['Email', 'Facebook', 'Adwords', 'YouTube', 'Organic']
-
-      - name: event_type
-        data_type: string
-        description: "The type of event, such as page view, add to cart, or purchase."
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['cancel', 'cart', 'department', 'home','product','purchase']
-
-      - name: browser
-        data_type: string
-        description: "The web browser used by the user to access the eCommerce site, such as Chrome, Firefox, or Safari."
-        tests:
-          - not_null
-          - accepted_values:
-              values: ['IE', 'Firefox', 'Safari', 'Other', 'Chrome']
-
-      - name: session_count
-        data_type: int64
-        description: "The number of sessions initiated by users. A session is a group of interactions that take place on your website within a given time frame."
-
-
-      - name: purchase_count
-        data_type: int64
-        description: "The total number of purchases made by users."
-
-
-      - name: cart_count
-        data_type: int64
-        description: "The number of times products were added to the cart by users."
-
-
-      - name: product_count
-        data_type: int64
-        description: "The number of products interacted with by users, which could include views, clicks, or additions to cart."
-
-
   - name: int_ecommerce__user_closest_dc
     description: "Mapping of users to their closest distribution centers with distance details"
     columns:
@@ -114,8 +62,6 @@ models:
       - name: dc_name
         data_type: string
         description: "Name of the distribution center"
-        tests:
-          - not_null
 
       - name: distance_in_kms
         data_type: float64

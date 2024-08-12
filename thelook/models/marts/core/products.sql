@@ -1,9 +1,9 @@
-with source
+with products
 as (
 	select *
-	from {{ source('thelook_ecommerce', 'products') }}
+	from {{ref('stg_ecommerce__products') }}
 	)
-select id as product_id
+select product_id
 	, cost
 	, category
 	, name
@@ -12,4 +12,4 @@ select id as product_id
 	, department
 	, sku
 	, distribution_center_id
-from source
+from products
