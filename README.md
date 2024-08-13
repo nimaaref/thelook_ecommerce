@@ -1,7 +1,39 @@
 # TheLook eCommerce dbt Project
 
 ## Project Description
-TheLook eCommerce dbt Project is designed to transform source data from public datasets available in Google BigQuery into various models that monitor business performance and better understand user funnel progression. This project is a portfolio piece that showcases how data can be structured and analyzed to answer key business questions.
+TheLook eCommerce dbt Project aims to transform source data from public datasets available in Google BigQuery into various models to monitor business performance. This portfolio piece demonstrates how data can be structured and analyzed to answer key business questions, including:
+
+1. **Overall Performance**:
+	- What is the overall performance in the last year?
+	- What are the top-selling products and categories?
+2. **Customer Insights**:
+	- How many returning vs. new customers do we have?
+	- What products are being purchased by returning and new customers?
+3. **Website Funnel Effectiveness**:
+	- How effective is the website funnel in converting visits to purchases?
+	- Which marketing channel is generating the most purchases?
+4. **Distribution Center Analysis in the USA**:
+	- Which distribution centers are frequently shipping products to customers from non-optimal locations?
+	- What are the categories and products most often shipped from a non-optimal locations to customers?
+
+This project showcases advanced data modeling, transformation, and analysis techniques using dbt, providing actionable insights to improve business performance. The data was visualized in four LookerStudio dashboards that may be accessed by the following [link](https://lookerstudio.google.com/reporting/d84185e7-6e4b-4d4f-b476-450296e46f88).
+
+## [LookerStudio Dashboards](https://lookerstudio.google.com/reporting/d84185e7-6e4b-4d4f-b476-450296e46f88).
+- screenshots coming soon.
+
+## Key Transformations
+
+- **Order Items Intermediate Table:** Joins orders, distribution centers, inventory, and order items into a single intermediary table, providing dimensions such as the distribution center the product was sent from and metrics like revenue earned from product sales.
+
+- **User Closest DC Intermediate:** Identifies the closest distribution center to each customer using the `ST_DISTANCE` and `QUALIFY` statements.
+
+- **New vs Returning Customers in User Table:** Distinguishes between new and returning customers based on their first purchase date and recurring purchases.
+
+- **Funnel Performance Table:** Filters key funnel metrics to provide visibility into channel and browser performance.
+
+
+## DAG
+![dbt-dag (2)](https://github.com/user-attachments/assets/729a2f50-f788-406a-8678-066660cf3266)
 
 ## Installation Instructions
 To set up this project, you will need:
@@ -12,12 +44,6 @@ To set up this project, you will need:
    ```sh
    pip install dbt-bigquery
    ```
-
-## Usage Instructions
-This project is intended to demonstrate how data can be structured to answer various business questions. It includes models that can be used to generate reports on:
-- Product performance, including margin percentage per product.
-- User progression through the funnel.
-- Top-selling products for a given time period.
 
 ### Running the Project
 1. Clone the repository:
@@ -64,15 +90,6 @@ The project is structured according to dbt best practices:
   - `staging/`: Staging files that prepare raw data for further transformations.
   - `intermediate/`: Intermediate files that join and transform staging data.
   - `marts/`: Final fact and dimension tables that are used for analysis and reporting.
-
-## Key Features
-- **Final Tables in Mart Folder:** These tables are used to visualize data in Looker Studio, providing insights into business performance and user behavior.
-- **Modular Structure:** The project is organized in a way that makes it easy to extend and modify.
-- **Comprehensive Testing:** Includes tests for data integrity and quality to ensure reliable outputs.
-
-## DAG
-![dbt-dag (2)](https://github.com/user-attachments/assets/729a2f50-f788-406a-8678-066660cf3266)
-
 
 ## License
 This project is licensed under the MIT License.
