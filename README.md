@@ -18,8 +18,10 @@ TheLook eCommerce dbt Project aims to transform source data from public datasets
 
 This project showcases advanced data modeling, transformation, and analysis techniques using dbt, providing actionable insights to improve business performance. The data was visualized in four LookerStudio dashboards that may be accessed by the following [link](https://lookerstudio.google.com/reporting/d84185e7-6e4b-4d4f-b476-450296e46f88).
 
-## [LookerStudio Dashboards](https://lookerstudio.google.com/reporting/d84185e7-6e4b-4d4f-b476-450296e46f88).
-- screenshots coming soon.
+## [LookerStudio Dashboards](https://lookerstudio.google.com/reporting/d84185e7-6e4b-4d4f-b476-450296e46f88)
+![Screenshot 2024-08-13 at 3 38 00 PM](https://github.com/user-attachments/assets/66c1352a-2a53-4f56-b485-a843c11081b9)
+
+![Screenshot 2024-08-13 at 3 38 23 PM](https://github.com/user-attachments/assets/42439b2f-63b0-43ba-a5bf-c33879895b84)
 
 ## Key Transformations
 
