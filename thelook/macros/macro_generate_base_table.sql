@@ -1,7 +1,3 @@
-/*
-	Original source code from dbt that I've edited for this course
-	https://github.com/dbt-labs/dbt-codegen/blob/0.9.0/macros/generate_base_model.sql
-*/
 
 {% macro generate_base_model(source_name, table_name, case_sensitive_cols=False, materialized=None) %}
 
